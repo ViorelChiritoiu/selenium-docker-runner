@@ -1,0 +1,20 @@
+version: "3"
+services:
+  vendor-portal:
+    image: chiritoiuviorel/selenium
+    environment:
+    - BROWSER=chrome
+    - HUB_HOST=hub
+    - THREAD_COUNT=3
+    - TEST_SUITE=vendor-portal.xml
+    volumes:
+    - C:\selenium_framework\selenium-docker\output\vendor-portal:/home/selenium-docker/test-output
+  flight-reservation:
+    image: chiritoiuviorel/selenium
+    environment:
+    - BROWSER=firefox
+    - HUB_HOST=hub
+    - THREAD_COUNT=3
+    - TEST_SUITE=flight-reservation.xml
+    volumes:
+    - C:\selenium_framework\selenium-docker\output\flight-reservation:/home/selenium-docker/test-output
